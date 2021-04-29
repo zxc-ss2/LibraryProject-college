@@ -1,4 +1,5 @@
-﻿using LibraryProject.Views;
+﻿using LibraryProject.Properties;
+using LibraryProject.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,17 +49,28 @@ namespace LibraryProject
             if (e.Content is AuthorizationPage || e.Content is RegistrationPage)
             {
                 PersonalAreaImage.Visibility = Visibility.Collapsed;
-                ExitBtn.Visibility = Visibility.Collapsed;
+                LogOutBtn.Visibility = Visibility.Collapsed;
             }
             else
             {
                 PersonalAreaImage.Visibility = Visibility.Visible;
-                ExitBtn.Visibility = Visibility.Visible;
+                LogOutBtn.Visibility = Visibility.Visible;
+                ExitBtn.Visibility = Visibility.Collapsed;
             }
+
         }
 
         private void ExitBtn_Click(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void LogOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите выйти?", "Выход из аккаунта", MessageBoxButton.YesNoCancel);
+            if (result == MessageBoxResult.Yes)
+            {
+                MainFrame.Navigate(new Views.AuthorizationPage());
+            }
         }
     }
 }
