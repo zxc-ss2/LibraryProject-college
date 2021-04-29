@@ -1,4 +1,5 @@
 ﻿using LibraryProject.Models;
+using LibraryProject.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace LibraryProject.Controllers
                                                   t.patronymic.Contains(info) || t.trading.ticket.Contains(info)).ToList();
         }
 
-        public List<Models.clients> ClientsZxc(string password)
+        public List<Models.clients> ClientsPasswordMatchUp(string password)
         {
             return dbHelper.context.clients.Where(t => t.password == password).ToList();
         }
@@ -32,9 +33,9 @@ namespace LibraryProject.Controllers
         /// <param name="login"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public bool CheckUser(string login, string password)
+        public bool CheckUser(string userLogin, string userPassword)
         {
-            clients user = dbHelper.context.clients.AsNoTracking().FirstOrDefault(t => t.login == login && t.password == password);
+            clients user = dbHelper.context.clients.AsNoTracking().FirstOrDefault(t => t.login == userLogin && t.password == userPassword);
 
             if (user == null)
             {
@@ -42,6 +43,9 @@ namespace LibraryProject.Controllers
                 return false;
             }
 
+            Settings.Default.login = userLogin;
+            Settings.Default.password = userPassword;
+            Settings.Default.role = Convert.ToInt32(dbHelper.context.clients.Where(t => t.login == userLogin).First().id_role);
             return true;
         }
 
@@ -98,13 +102,14 @@ namespace LibraryProject.Controllers
             }
 
             dbHelper.context.SaveChanges();
-
             return true;
         }
 
-        public void DeleteClientInfo()
+        public void DeleteClientInfo(Models.clients selectString)
         {
-            dbHelper.context.clients.Remove();
+            dbHelper.context.clients.Remove(selectString);
+            dbHelper.context.SaveChanges();
+            MessageBox.Show("Удалена информация о" + selectString);
         }
     }
 }

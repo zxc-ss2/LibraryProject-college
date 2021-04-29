@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryProject.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,7 +32,7 @@ namespace LibraryProject
 
         private void PersonalAreaImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainFrame.Navigate(new Views.EditPage(login, password));
+            MainFrame.Navigate(new Views.EditPage(password));
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -40,6 +41,24 @@ namespace LibraryProject
             {
                 MainFrame.GoBack();
             }
+        }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            if (e.Content is AuthorizationPage || e.Content is RegistrationPage)
+            {
+                PersonalAreaImage.Visibility = Visibility.Collapsed;
+                ExitBtn.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                PersonalAreaImage.Visibility = Visibility.Visible;
+                ExitBtn.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

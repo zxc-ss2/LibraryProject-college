@@ -25,11 +25,11 @@ namespace LibraryProject.Views
         Controllers.ClientsController clientsController = new Controllers.ClientsController();
         List<Models.clients> zxc = new List<Models.clients>();
 
-        public EditPage(string login, string password)
+        public EditPage(string password)
         {
             InitializeComponent();
 
-            foreach (var item in clientsController.ClientsZxc(password))
+            foreach (var item in clientsController.ClientsPasswordMatchUp(password))
             {
                 NewFirstNameInput.Text = item.name;
                 NewLastNameInput.Text = item.surname;
@@ -43,7 +43,7 @@ namespace LibraryProject.Views
                 NewPasswordInput.Password = item.password;
             }
 
-            zxc = clientsController.ClientsZxc(password);
+            zxc = clientsController.ClientsPasswordMatchUp(password);
         }
 
         private void FirstNameInput_TextChanged(object sender, TextChangedEventArgs e)
@@ -53,7 +53,7 @@ namespace LibraryProject.Views
             bool trigger = check.CheckName(NewFirstNameInput.Text);
             string word = NewFirstNameInput.Text;
 
-            foreach (var item in clientsController.ClientsZxc(NewPasswordInput.Password))
+            foreach (var item in clientsController.ClientsPasswordMatchUp(NewPasswordInput.Password))
             {
 
                 if (trigger && word != item.name && word != "")
@@ -79,7 +79,7 @@ namespace LibraryProject.Views
             bool trigger = check.CheckName(NewLastNameInput.Text);
             string word = NewLastNameInput.Text;
 
-            foreach (var item in clientsController.ClientsZxc(NewPasswordInput.Password))
+            foreach (var item in clientsController.ClientsPasswordMatchUp(NewPasswordInput.Password))
             {
 
                 if (trigger && word != item.surname && word != "")
@@ -105,7 +105,7 @@ namespace LibraryProject.Views
             bool trigger = check.CheckName(NewPatronymicInput.Text);
             string word = NewPatronymicInput.Text;
 
-            foreach (var item in clientsController.ClientsZxc(NewPasswordInput.Password))
+            foreach (var item in clientsController.ClientsPasswordMatchUp(NewPasswordInput.Password))
             {
 
                 if (trigger && word != item.patronymic && word != "")
@@ -131,7 +131,7 @@ namespace LibraryProject.Views
             bool trigger = check.CheckAddress(NewAddressInput.Text);
             string word = NewAddressInput.Text;
 
-            foreach (var item in clientsController.ClientsZxc(NewPasswordInput.Password))
+            foreach (var item in clientsController.ClientsPasswordMatchUp(NewPasswordInput.Password))
             {
 
                 if (trigger && word != item.address && word != "")
@@ -156,7 +156,7 @@ namespace LibraryProject.Views
 
             string word = NewWorkplaceInput.Text;
 
-            foreach (var item in clientsController.ClientsZxc(NewPasswordInput.Password))
+            foreach (var item in clientsController.ClientsPasswordMatchUp(NewPasswordInput.Password))
             {
 
                 if (word != item.workplace)
@@ -181,7 +181,7 @@ namespace LibraryProject.Views
 
             string word = NewStudyplaceInput.Text;
 
-            foreach (var item in clientsController.ClientsZxc(NewPasswordInput.Password))
+            foreach (var item in clientsController.ClientsPasswordMatchUp(NewPasswordInput.Password))
             {
 
                 if (word != item.studyplace)
@@ -207,7 +207,7 @@ namespace LibraryProject.Views
             bool trigger = check.CheckPhone(NewPhoneInput.Text);
             string word = NewPhoneInput.Text;
 
-            foreach (var item in clientsController.ClientsZxc(NewPasswordInput.Password))
+            foreach (var item in clientsController.ClientsPasswordMatchUp(NewPasswordInput.Password))
             {
 
                 if (trigger && word != item.phone && word != "")
@@ -233,7 +233,7 @@ namespace LibraryProject.Views
             bool trigger = check.CheckLogin(NewLoginInput.Text);
             string word = NewLoginInput.Text;
 
-            foreach (var item in clientsController.ClientsZxc(NewPasswordInput.Password))
+            foreach (var item in clientsController.ClientsPasswordMatchUp(NewPasswordInput.Password))
             {
 
                 if (trigger && word != item.login && word != "")
@@ -259,7 +259,7 @@ namespace LibraryProject.Views
             bool trigger = check.CheckPassword(NewPasswordInput.Password);
             string word = NewPasswordInput.Password;
 
-            foreach (var item in clientsController.ClientsZxc(NewPasswordInput.Password))
+            foreach (var item in clientsController.ClientsPasswordMatchUp(NewPasswordInput.Password))
             {
 
                 if (trigger && word != item.password && word != "")

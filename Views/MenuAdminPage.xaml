@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource LeftOfferText}">Читатели</TextBlock>
         <DockPanel Style="{StaticResource AdminDocPanel}">
-            <Button Style="{StaticResource AdminBtn}">
+            <Button Style="{StaticResource AdminBtn}" Click="Button_Click">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <Image Source="/Resources/images/trash.png"/>
                     <TextBlock VerticalAlignment="Center" Margin="10 0 10 0"><Run Text="Удалить"/></TextBlock>

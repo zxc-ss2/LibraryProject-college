@@ -38,5 +38,20 @@ namespace LibraryProject.Views
         {
             ClientDataGrid.ItemsSource = clientsController.ClientsMatchUpInfoOutput(SearchAdminReadersBox.Text);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var item = ClientDataGrid.SelectedItem as Models.clients;
+
+            if(item == null)
+            {
+                MessageBox.Show("Вы не выбрали ни одной строки");
+            }
+            else
+            {
+                clientsController.DeleteClientInfo(item);
+                ClientDataGrid.ItemsSource = clientsController.ClientsInfoOutput();
+            }
+        }
     }
 }
