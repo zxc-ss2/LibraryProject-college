@@ -4,16 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище libraryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище LibraryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="books">
           <Key>
             <PropertyRef Name="book_id" />
           </Key>
-          <Property Name="book_id" Type="int" Nullable="false" />
+          <Property Name="book_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="author" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="bbk" Type="nvarchar" MaxLength="50" />
-          <Property Name="isbn" Type="nvarchar" MaxLength="50" />
+          <Property Name="bbk" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="isbn" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="place" Type="nvarchar" MaxLength="50" />
           <Property Name="year" Type="int" />
           <Property Name="knowledge_field_id" Type="int" Nullable="false" />
@@ -204,7 +204,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище libraryModelContainer">
+        <EntityContainer Name="Хранилище LibraryModelContainer">
           <EntitySet Name="books" EntityType="Self.books" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="chambers" EntityType="Self.chambers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="clients" EntityType="Self.clients" Schema="dbo" store:Type="Tables" />
@@ -247,11 +247,10 @@
             <End Role="trading" EntitySet="trading" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="libraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="books">
           <Key>
             <PropertyRef Name="book_id" />
@@ -259,8 +258,8 @@
           <Property Name="book_id" Type="Int32" Nullable="false" />
           <Property Name="author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="bbk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="isbn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bbk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isbn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="place" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="year" Type="Int32" />
           <Property Name="knowledge_field_id" Type="Int32" Nullable="false" />
@@ -515,9 +514,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище libraryModelContainer" CdmEntityContainer="LibraryEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище LibraryModelContainer" CdmEntityContainer="LibraryEntities">
           <EntitySetMapping Name="books">
-            <EntityTypeMapping TypeName="libraryModel.books">
+            <EntityTypeMapping TypeName="LibraryModel.books">
               <MappingFragment StoreEntitySet="books">
                 <ScalarProperty Name="book_id" ColumnName="book_id" />
                 <ScalarProperty Name="author" ColumnName="author" />
@@ -534,7 +533,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="chambers">
-            <EntityTypeMapping TypeName="libraryModel.chambers">
+            <EntityTypeMapping TypeName="LibraryModel.chambers">
               <MappingFragment StoreEntitySet="chambers">
                 <ScalarProperty Name="chamber_id" ColumnName="chamber_id" />
                 <ScalarProperty Name="chamber_name" ColumnName="chamber_name" />
@@ -542,7 +541,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="clients">
-            <EntityTypeMapping TypeName="libraryModel.clients">
+            <EntityTypeMapping TypeName="LibraryModel.clients">
               <MappingFragment StoreEntitySet="clients">
                 <ScalarProperty Name="client_id" ColumnName="client_id" />
                 <ScalarProperty Name="id_trading" ColumnName="id_trading" />
@@ -561,7 +560,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="fields">
-            <EntityTypeMapping TypeName="libraryModel.fields">
+            <EntityTypeMapping TypeName="LibraryModel.fields">
               <MappingFragment StoreEntitySet="fields">
                 <ScalarProperty Name="field_knowledge_id" ColumnName="field_knowledge_id" />
                 <ScalarProperty Name="field_knowledge_name" ColumnName="field_knowledge_name" />
@@ -569,7 +568,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="formular">
-            <EntityTypeMapping TypeName="libraryModel.formular">
+            <EntityTypeMapping TypeName="LibraryModel.formular">
               <MappingFragment StoreEntitySet="formular">
                 <ScalarProperty Name="formular_id" ColumnName="formular_id" />
                 <ScalarProperty Name="id_trading" ColumnName="id_trading" />
@@ -577,7 +576,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="interpretors">
-            <EntityTypeMapping TypeName="libraryModel.interpretors">
+            <EntityTypeMapping TypeName="LibraryModel.interpretors">
               <MappingFragment StoreEntitySet="interpretors">
                 <ScalarProperty Name="interpreter_id" ColumnName="interpreter_id" />
                 <ScalarProperty Name="interpreter_name" ColumnName="interpreter_name" />
@@ -585,7 +584,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="quantity">
-            <EntityTypeMapping TypeName="libraryModel.quantity">
+            <EntityTypeMapping TypeName="LibraryModel.quantity">
               <MappingFragment StoreEntitySet="quantity">
                 <ScalarProperty Name="id_book" ColumnName="id_book" />
                 <ScalarProperty Name="instook" ColumnName="instook" />
@@ -594,7 +593,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="roles">
-            <EntityTypeMapping TypeName="libraryModel.roles">
+            <EntityTypeMapping TypeName="LibraryModel.roles">
               <MappingFragment StoreEntitySet="roles">
                 <ScalarProperty Name="role_id" ColumnName="role_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -602,7 +601,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="trading">
-            <EntityTypeMapping TypeName="libraryModel.trading">
+            <EntityTypeMapping TypeName="LibraryModel.trading">
               <MappingFragment StoreEntitySet="trading">
                 <ScalarProperty Name="trading_id" ColumnName="trading_id" />
                 <ScalarProperty Name="book_id" ColumnName="book_id" />

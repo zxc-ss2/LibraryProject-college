@@ -62,6 +62,7 @@ namespace LibraryProject
 
         private void ExitBtn_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.Shutdown();
         }
 
         private void LogOutBtn_Click(object sender, RoutedEventArgs e)

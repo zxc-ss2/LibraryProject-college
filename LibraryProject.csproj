@@ -69,46 +69,49 @@
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="DbHelper.cs" />
     <Compile Include="Models\books.cs">
-      <DependentUpon>LibraryModel.tt</DependentUpon>
+      <DependentUpon>LibraryProjectModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\chambers.cs">
-      <DependentUpon>LibraryModel.tt</DependentUpon>
+      <DependentUpon>LibraryProjectModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\clients.cs">
-      <DependentUpon>LibraryModel.tt</DependentUpon>
+      <DependentUpon>LibraryProjectModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\fields.cs">
-      <DependentUpon>LibraryModel.tt</DependentUpon>
+      <DependentUpon>LibraryProjectModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\formular.cs">
-      <DependentUpon>LibraryModel.tt</DependentUpon>
+      <DependentUpon>LibraryProjectModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\interpretors.cs">
-      <DependentUpon>LibraryModel.tt</DependentUpon>
+      <DependentUpon>LibraryProjectModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LibraryModel.Context.cs">
+    <Compile Include="Models\LibraryProjectModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LibraryModel.Context.tt</DependentUpon>
+      <DependentUpon>LibraryProjectModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LibraryModel.cs">
+    <Compile Include="Models\LibraryProjectModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LibraryModel.tt</DependentUpon>
+      <DependentUpon>LibraryProjectModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LibraryModel.Designer.cs">
+    <Compile Include="Models\LibraryProjectModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LibraryModel.edmx</DependentUpon>
+      <DependentUpon>LibraryProjectModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\quantity.cs">
-      <DependentUpon>LibraryModel.tt</DependentUpon>
+      <DependentUpon>LibraryProjectModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\roles.cs">
-      <DependentUpon>LibraryModel.tt</DependentUpon>
+      <DependentUpon>LibraryProjectModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\trading.cs">
-      <DependentUpon>LibraryModel.tt</DependentUpon>
+      <DependentUpon>LibraryProjectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddBookPage.xaml.cs">
+      <DependentUpon>AddBookPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
@@ -138,6 +141,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Resources\StyleDict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddBookPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,12 +188,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.Config" />
-    <EntityDeploy Include="Models\LibraryModel.edmx">
+    <EntityDeploy Include="Models\LibraryProjectModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LibraryModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>LibraryProjectModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\LibraryModel.edmx.diagram">
-      <DependentUpon>LibraryModel.edmx</DependentUpon>
+    <None Include="Models\LibraryProjectModel.edmx.diagram">
+      <DependentUpon>LibraryProjectModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -228,17 +235,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Models\LibraryModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LibraryModel.edmx</DependentUpon>
-      <LastGenOutput>LibraryModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\LibraryModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LibraryModel.edmx</DependentUpon>
-      <LastGenOutput>LibraryModel.cs</LastGenOutput>
-    </Content>
     <Resource Include="Resources\images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\LibraryProjectModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LibraryProjectModel.edmx</DependentUpon>
+      <LastGenOutput>LibraryProjectModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\LibraryProjectModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LibraryProjectModel.edmx</DependentUpon>
+      <LastGenOutput>LibraryProjectModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
