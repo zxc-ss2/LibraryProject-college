@@ -88,8 +88,8 @@
                     </Button>
                 </DockPanel>
             </DockPanel>
-            
-            <Button  Style="{StaticResource StartBtn}" Click="StartBtnClick">Get started</Button>
+
+            <Button  Style="{StaticResource StartBtn}" Click="StartBtnClick">Продолжить</Button>
         </StackPanel >
     </Grid>
 </Page>

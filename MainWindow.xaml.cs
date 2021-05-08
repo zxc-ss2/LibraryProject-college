@@ -50,6 +50,7 @@ namespace LibraryProject
             {
                 PersonalAreaImage.Visibility = Visibility.Collapsed;
                 LogOutBtn.Visibility = Visibility.Collapsed;
+                ExitBtn.Visibility = Visibility.Visible;
             }
             else
             {

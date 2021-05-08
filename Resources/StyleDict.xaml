@@ -18,8 +18,6 @@
         <Setter Property="Foreground" Value="#fff"/>
     </Style>
 
-    <SolidColorBrush x:Key="ShadowColor" Color="ShadowColor"/>
-
     <Style TargetType="Button" x:Key="FooterBtn">
         <Setter Property="Background" Value="#16798c"/>
         <Setter Property="Width" Value="110"/>
@@ -229,6 +227,10 @@ Value="{x:Static sys:String.Empty}">
         <Setter Property="Background" Value="{StaticResource MainColor}"/>
         <Setter Property="Foreground" Value="#ffffff"/>
         <Setter Property="Margin" Value="20 130 20 0"/>
+    </Style>
+
+    <Style x:Key="ReaderDataGrid" TargetType="DataGrid" BasedOn="{StaticResource BookDataGrid}">
+        <Setter Property="Margin" Value="20 20 20 0"/>
     </Style>
 
     <LinearGradientBrush x:Key="GradientBtn" EndPoint="0,1" StartPoint="1,0">

@@ -87,7 +87,6 @@ namespace LibraryProject.Controllers
 
         public bool UpdateClientInfo(string newName, string newSurname, string newPatronymic, string newAddress, string newWorkplace, string newStudyplace, string newPhone, string newLogin, string newPassword, List<Models.clients> qwe)
         {
-            dbHelper.context.clients.Where(t => t.login == newLogin && t.password == newPassword).ToList();
 
             foreach (var item in qwe) { 
                 item.name = newName;

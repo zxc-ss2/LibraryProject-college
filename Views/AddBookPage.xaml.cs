@@ -24,5 +24,13 @@ namespace LibraryProject.Views
         {
             InitializeComponent();
         }
+
+        Controllers.BooksController booksController = new Controllers.BooksController();
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            booksController.AddNewBook(AuthorInput.Text, NameInput.Text, BBKInput.Text, ISBNInput.Text, PlaceInput.Text, Convert.ToInt32(YearInput.Text), Convert.ToInt32(AreaInput.Text), Convert.ToInt32(InterpretrInput.Text), Convert.ToInt32(ChamberInput.Text), Convert.ToInt32(TradingInput.Text));
+        }
     }
 }

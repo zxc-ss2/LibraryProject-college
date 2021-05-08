@@ -53,13 +53,13 @@
         </DataGrid>
         <TextBlock Grid.Row="1" Style="{StaticResource LeftOfferText}">Книги</TextBlock>
         <DockPanel Grid.Row="1" Style="{StaticResource AdminDocPanel}">
-            <Button Style="{StaticResource AdminBtn}">
+            <Button Style="{StaticResource AdminBtn}" Click="Button_Click_2">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <Image Source="/Resources/images/trash.png"/>
                     <TextBlock VerticalAlignment="Center" Margin="10 0 10 0"><Run Text="Удалить"/></TextBlock>
                 </StackPanel>
             </Button>
-            <Button Style="{StaticResource AdminBtn}">
+            <Button Style="{StaticResource AdminBtn}" Click="Button_Click_1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Resources/images/add.png"></Image>
                     <TextBlock VerticalAlignment="Center" Margin="10 0 10 0">Добавить</TextBlock>

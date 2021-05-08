@@ -14,58 +14,53 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
+            <TextBlock Style="{StaticResource OfferText}">Добавить книгу</TextBlock>
             <DockPanel>
                 <TextBlock Style="{StaticResource LeftLabelText}">Автор</TextBlock>
                 <TextBlock Style="{StaticResource RightLabelText}">Название</TextBlock>
             </DockPanel>
             <DockPanel>
-                <TextBox Style="{StaticResource LeftInputBox}"></TextBox>
-                <TextBox Style="{StaticResource RightInputBox}"></TextBox>
+                <TextBox x:Name="AuthorInput" Style="{StaticResource LeftInputBox}"></TextBox>
+                <TextBox x:Name="NameInput" Style="{StaticResource RightInputBox}"></TextBox>
             </DockPanel>
             <DockPanel>
                 <TextBlock Style="{StaticResource LeftLabelText}">BBK</TextBlock>
                 <TextBlock Style="{StaticResource RightLabelText}">ISBN</TextBlock>
             </DockPanel>
             <DockPanel>
-                <TextBox Style="{StaticResource LeftInputBox}" x:Name="BBKInput" TextChanged="PatronymicInput_TextChanged"></TextBox>
-                <TextBox Style="{StaticResource LeftInputBox}" x:Name="ISBNInput" TextChanged="PatronymicInput_TextChanged"></TextBox>
+                <TextBox Style="{StaticResource LeftInputBox}" x:Name="BBKInput"></TextBox>
+                <TextBox Style="{StaticResource RightInputBox}" x:Name="ISBNInput"></TextBox>
             </DockPanel>
             <DockPanel>
-                <TextBlock Style="{StaticResource LeftLabelText}">Адрес</TextBlock>
-                <TextBlock Style="{StaticResource RightLabelText}">Место работы</TextBlock>
+                <TextBlock Style="{StaticResource LeftLabelText}">Место издания</TextBlock>
+                <TextBlock Style="{StaticResource RightLabelText}">Год издания</TextBlock>
             </DockPanel>
             <DockPanel>
-                <TextBox x:Name="AddressInput" Style="{StaticResource LeftInputBox}"></TextBox>
-                <TextBox x:Name="WorkplaceInput" Style="{StaticResource RightInputBox}"></TextBox>
+                <TextBox x:Name="PlaceInput" Style="{StaticResource LeftInputBox}"></TextBox>
+                <TextBox x:Name="YearInput" Style="{StaticResource RightInputBox}"></TextBox>
             </DockPanel>
             <DockPanel>
-                <TextBlock Style="{StaticResource LeftLabelText}">Место учебы</TextBlock>
-                <TextBlock Style="{StaticResource RightLabelText}">Телефон</TextBlock>
+                <TextBlock Style="{StaticResource LeftLabelText}">Сфера книги</TextBlock>
+                <TextBlock Style="{StaticResource RightLabelText}">Издательство</TextBlock>
             </DockPanel>
             <DockPanel>
-                <TextBox x:Name="StudyplaceInput" Style="{StaticResource LeftInputBox}"></TextBox>
-                <TextBox x:Name="PhoneInput" Style="{StaticResource RightInputBox}"></TextBox>
+                <TextBox x:Name="AreaInput" Style="{StaticResource LeftInputBox}"></TextBox>
+                <TextBox x:Name="InterpretrInput" Style="{StaticResource RightInputBox}"></TextBox>
             </DockPanel>
             <DockPanel>
-                <TextBlock Style="{StaticResource LeftLabelText}">Логин</TextBlock>
-                <TextBlock Style="{StaticResource RightLabelText}">Пароль</TextBlock>
+                <TextBlock Style="{StaticResource LeftLabelText}">Отсек</TextBlock>
+                <TextBlock Style="{StaticResource RightLabelText}">Номер обмена</TextBlock>
             </DockPanel>
             <DockPanel>
                 <DockPanel>
-                    <TextBox x:Name="LoginInput" Style="{StaticResource LeftInputBox}"></TextBox>
-                    <Button Style="{StaticResource WarningBtn}" Height="20" Width="20" VerticalContentAlignment="Center">
-                        <Image Source="/Resources/images/warning-removebg-preview.png" />
-                    </Button>
+                    <TextBox x:Name="ChamberInput" Style="{StaticResource LeftInputBox}"></TextBox>
                 </DockPanel>
                 <DockPanel HorizontalAlignment="Right">
-                    <PasswordBox x:Name="PasswordInput" Style="{StaticResource CenterInputBox}"></PasswordBox>
-                    <Button Style="{StaticResource WarningBtn}" Height="20" Width="20" VerticalContentAlignment="Center">
-                        <Image Source="/Resources/images/warning-removebg-preview.png"/>
-                    </Button>
+                    <TextBox x:Name="TradingInput" Style="{StaticResource RightInputBox}"></TextBox>
                 </DockPanel>
             </DockPanel>
 
-            <Button  Style="{StaticResource StartBtn}" Click="StartBtnClick">Get started</Button>
+            <Button  Style="{StaticResource StartBtn}" Click="Button_Click">Продолжить</Button>
         </StackPanel >
     </Grid>
 </Page>

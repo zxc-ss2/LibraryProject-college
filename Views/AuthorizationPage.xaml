@@ -28,7 +28,7 @@
             <TextBlock Style="{StaticResource LeftLabelText}">Пароль</TextBlock>
             <TextBox x:Name="PasswordTextBox" Style="{StaticResource AuthoInputBox}"></TextBox>
 
-            <Button  Style="{StaticResource StartBtn}" Click="LoginBtnClick">Continue</Button>
+            <Button  Style="{StaticResource StartBtn}" Click="LoginBtnClick">Продолжить</Button>
         </StackPanel >
     </Grid>
 </Page>

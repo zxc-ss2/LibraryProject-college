@@ -53,5 +53,25 @@ namespace LibraryProject.Views
                 ClientDataGrid.ItemsSource = clientsController.ClientsInfoOutput();
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AddBookPage());
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var item = BookDataGrid.SelectedItem as Models.books;
+
+            if (item == null)
+            {
+                MessageBox.Show("Вы не выбрали ни одной строки");
+            }
+            else
+            {
+                booksController.DeleteBookInfo(item);
+                ClientDataGrid.ItemsSource = clientsController.ClientsInfoOutput();
+            }
+        }
     }
 }
